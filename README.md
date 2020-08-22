@@ -3,7 +3,7 @@ Very rudimentary "oscilloscope" example for the Electro-smith Daisy platform
 
 This is example is intended to be used with POD.
 
-DaisyExamples/pod/simple_oscilloscope/
+# DaisyExamples/pod/simple_oscilloscope/
 cpp and make file included in this directory
 compile with "make" and use "make program-dfu" to load onto your Daisy POD
 Example includes two identical sine wave oscillators.
@@ -15,7 +15,7 @@ I found that if I use just one Oscillator in both UpdateOled() and AudioCallback
 Knob 1 modulates the Oscillator frequency (pitch)
 Knob 2 modulates the Oscillator amplitude (volume)
 
-DaisyExamples/libdaisy/src/
+# DaisyExamples/libdaisy/src/
 Custom cpp and header files included so that POD can use the OLED drivers for PATCH
 I've simply taken the OLED related code out of the PATCH source files and included them in this file
 
