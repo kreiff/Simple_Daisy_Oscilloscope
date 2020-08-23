@@ -15,6 +15,7 @@ static float amp;
 const int SCREEN_WIDTH = 128;
 
 float sigViz, sigAud, sigPost;
+float riseTest[2];
 
 uint32_t getTick;
 int getTickInt;
@@ -33,6 +34,13 @@ void UpdateOled() {
     }
     else if (getTickInt - saveTick > 120 /*refreshRate*/)
 	{
+		
+		for (int m = 0; m < 2; m++)
+		{
+			riseTest[m] = oscViz.Process();
+		}
+		if(riseTest[0] > 0 && riseTest[1] < 0)
+		{
 		pod.display.Fill(false);
 		for (int k = 0; k < 128; k++) {
     	sigViz = oscViz.Process();
@@ -40,6 +48,7 @@ void UpdateOled() {
     	pod.display.DrawPixel(k, sigPost, true);
     	}
 		saveTick = getTick;
+		}
 	}
 
     for (int i = 0; i < 128; i++) {
